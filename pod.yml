@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      name: pod1
+      labels:
+        tier: backend
+    spec:
+      nodeName: kube-w1
+      containers:
+      - name: abc
+        image: flavian07/abc:v1-1
+        ports:
+        - containerPort: 8080
