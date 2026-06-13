@@ -66,8 +66,6 @@ tools {
                      {
 	         steps {
                        sh '''
-                   export KUBECONFIG=/var/lib/jenkins/kubeconfig
-
                    kubectl apply -f pod.yml
                    kubectl apply -f service.yml
                    kubectl apply -f deployment.yml
